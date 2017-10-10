@@ -10,4 +10,21 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+
+
+    public function idEncode($id)
+    {
+        $key = env('ID_ENC');
+
+        $idStr = (string) $id;
+        return base64_encode($key . $idStr);
+    }
+
+
+    public function idDecode($idStr)
+    {
+        $tempStr = base64_decode($idStr);
+        return substr($tempStr,6,strlen($tempStr)-6);
+    }
 }
