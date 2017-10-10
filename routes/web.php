@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::namespace('Content')->prefix('content')->group(function () {
+    Route::get('/create','ContentController@create');
+});
+
+
+
