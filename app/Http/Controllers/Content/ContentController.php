@@ -40,6 +40,8 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         //
+        echo 66;
+        exit;
     }
 
     /**
