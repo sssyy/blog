@@ -13,6 +13,14 @@
 
 
 <body>
+
+@if (Session::has('flash-message-content'))
+<div class="alert alert-success">
+    {{Session::get('flash-message-content')}}
+</div>
+@endif
+
+
 <form id="form-submit" action="/content" method="post">
     <input type="hidden" name="_token" value="{{csrf_token()}}">
     <div class="form-group">
@@ -64,7 +72,7 @@
     请输入内容
     </script>
     </div>
-    <button type="submit" id="submit-default" class="btn btn-default">提交</button>
+    <button type="submit" id="submit-default" class="btn btn-default">创建</button>
 </form>
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Content;
 use App\Models\Content;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
 
 class ContentController extends Controller
@@ -40,8 +41,34 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         //
-        echo 66;
-        exit;
+       $this->validate($request, [
+           'title' => 'required',
+           'description' => 'required',
+           'publish_status' => 'required',
+           'top_status' => 'required',
+           'content' => 'required',
+       ]);
+
+       $data = [
+           'title' => $request->input('title'),
+           'description' => $request->input('description'),
+           'content' => $request->input('content'),
+           'count' => 0,
+           'publish_status' => $request->input('publish_status') == 'on' ? 1 : 0,
+           'top' => $request->input('top_status') == 'on' ? 1 : 0,
+           'created_at' => empty($request->input('create_time')) ? date('Y-m-d',time()) : $request->input('create_time'),
+           'author_id' => 1
+       ];
+       $rs = Content::insert($data);
+
+       if ($rs) {
+            Session::flash('flash-message-content','create success');
+            return \view('Content.create');
+       } else {
+           Session::flash('flash-message-content','create failed');
+           return \view('Content.create');
+       }
+
     }
 
     /**
