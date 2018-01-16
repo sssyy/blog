@@ -6,7 +6,7 @@ use App\Models\Content;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
-use Illuminate\View\View;
+use Illuminate\Support\Facades\View;
 
 class ContentController extends Controller
 {
@@ -17,7 +17,18 @@ class ContentController extends Controller
      */
     public function index()
     {
-        //
+
+        $pageLimit = 10;
+        $contents = Content::where('publish_status','1')
+						->orderBy('id','desc')
+						->take($pageLimit)
+						->get()
+						->toArray();
+
+        if (is_array($contents)) {
+        	if (View::exists('Content.index'))
+        	return \view('Content.index')->with('contents',$contents);
+		}
     }
 
     /**
@@ -77,9 +88,13 @@ class ContentController extends Controller
      * @param  \App\Models\Content  $content
      * @return \Illuminate\Http\Response
      */
-    public function show(Content $content)
+    public function show($id)
     {
         //
+		$content = Content::find($id)->toArray();
+
+		var_dump($content);
+		exit;
     }
 
     /**
@@ -91,6 +106,7 @@ class ContentController extends Controller
     public function edit(Content $content)
     {
         //
+
     }
 
     /**

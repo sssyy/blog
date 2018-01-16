@@ -18,6 +18,8 @@ Route::get('/', function () {
 Route::namespace('Content')->prefix('content')->group(function () {
 
     Route::post('/','ContentController@store');
+    Route::get('/','ContentController@index');
+    Route::get('/{id}','ContentController@show');
     Route::get('/create','ContentController@create');
 
 
