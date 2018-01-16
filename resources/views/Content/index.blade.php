@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width">
 
     <!-- Bootstrap styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ URL::asset('/') }}css/bootstrap.min.css">
 
     <!-- Font-Awesome -->
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ URL::asset('/') }}css/font-awesome/css/font-awesome.min.css">
 
     <!-- Google Webfonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Serif:400,400italic' rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css" id="theme-styles">
+    <link rel="stylesheet" href="{{ URL::asset('/') }}css/style.css" id="theme-styles">
 
     <!--[if lt IE 9]>
-    <script src="js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+    <script src="{{ URL::asset('/') }}js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
     <![endif]-->
 
 </head>
@@ -28,7 +28,7 @@
     <div class="widewrapper masthead">
         <div class="container">
             <a href="index.html" id="logo">
-                <img src="img/logo.png" alt="clean Blog">
+                <img src="{{ URL::asset('/') }}img/logo.png" alt="clean Blog">
             </a>
 
             <div id="mobile-nav-toggle" class="pull-right">
@@ -83,8 +83,8 @@
                     <div class="col-md-6 col-sm-6">
                         <article class=" blog-teaser">
                             <header>
-                                <img src="img/1.jpg" alt="">
-                                <h3><a href="single.html">How to Create Template</a></h3>
+                                <img src="{{ URL::asset('/') }}img/1.jpg" alt="">
+                                <h3><a href="content/1">How to Create Template</a></h3>
                                 <span class="meta">19 August 2015, John Doe</span>
                                 <hr>
                             </header>
@@ -92,15 +92,15 @@
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sit. Doloribus dolores neque eos. Velit eveniet, necessitatibus aut sit tenetur perferendis! Commodi pariatur dignissimos, quis sequi odit iusto cumque quod!
                             </div>
                             <div class="clearfix">
-                                <a href="single.html" class="btn btn-clean-one">Read more</a>
+                                <a href="content/1" class="btn btn-clean-one">Read more</a>
                             </div>
                         </article>
                     </div>
                     <div class="col-md-6 col-sm-6">
                         <article class="blog-teaser">
                             <header>
-                                <img src="img/2.jpg" alt="">
-                                <h3><a href="single.html">Clean Personal Blog Template</a></h3>
+                                <img src="{{ URL::asset('/') }}img/2.jpg" alt="">
+                                <h3><a href="content/1">Clean Personal Blog Template</a></h3>
                                 <span class="meta">19 August 2015, John Doe</span>
                                 <hr>
                             </header>
@@ -108,7 +108,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sit. Doloribus dolores neque eos. Velit eveniet, necessitatibus aut sit tenetur perferendis! Commodi pariatur dignissimos, quis sequi odit iusto cumque quod!
                             </div>
                             <div class="clearfix">
-                                <a href="single.html" class="btn btn-clean-one">Read more</a>
+                                <a href="content/1" class="btn btn-clean-one">Read more</a>
                             </div>
                         </article>
                     </div>
@@ -121,7 +121,7 @@
                         <article class="blog-teaser">
                             <header>
                                 <img src="img/3.jpg" alt="">
-                                <h3><a href="single.html">Blackor - Responsive HTML5 Theme</a></h3>
+                                <h3><a href="content/1">Blackor - Responsive HTML5 Theme</a></h3>
                                 <span class="meta">19 August 2015, John Doe</span>
                                 <hr>
                             </header>
@@ -129,7 +129,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sit. Doloribus dolores neque eos. Velit eveniet, necessitatibus aut sit tenetur perferendis! Commodi pariatur dignissimos, quis sequi odit iusto cumque quod!
                             </div>
                             <div class="clearfix">
-                                <a href="single.html" class="btn btn-clean-one">Read more</a>
+                                <a href="content/1" class="btn btn-clean-one">Read more</a>
                             </div>
                         </article>
                     </div>
@@ -137,7 +137,7 @@
                         <article class="blog-teaser">
                             <header>
                                 <img src="img/4.jpg" alt="">
-                                <h3><a href="single.html">Yellow - HTML5 Template</a></h3>
+                                <h3><a href="content/1">Yellow - HTML5 Template</a></h3>
                                 <span class="meta">19 August 2015, John Doe</span>
                                 <hr>
                             </header>
@@ -145,7 +145,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sit. Doloribus dolores neque eos. Velit eveniet, necessitatibus aut sit tenetur perferendis! Commodi pariatur dignissimos, quis sequi odit iusto cumque quod!
                             </div>
                             <div class="clearfix">
-                                <a href="single.html" class="btn btn-clean-one">Read more</a>
+                                <a href="content/1" class="btn btn-clean-one">Read more</a>
                             </div>
                         </article>
                     </div>
@@ -253,8 +253,8 @@
 </footer>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/modernizr.js"></script>
+<script src="{{ URL::asset('/') }}js/bootstrap.min.js"></script>
+<script src="{{ URL::asset('/') }}js/modernizr.js"></script>
 
 </body>
 </html>

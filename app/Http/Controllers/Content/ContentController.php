@@ -93,7 +93,9 @@ class ContentController extends Controller
         //
 		$content = Content::find($id)->toArray();
 
-		var_dump($content);
+		if (is_array($content)) {
+			return \view('Content.show')->with('content', $content);
+		}
 		exit;
     }
 
