@@ -42,13 +42,13 @@
                     <ul class="nav nav-pills navbar-nav">
 
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.html">主页</a>
                         </li>
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="about.html">关于我</a>
                         </li>
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="contact.html">联系我</a>
                         </li>
                     </ul>
                 </div>
@@ -60,7 +60,7 @@
     <div class="widewrapper subheader">
         <div class="container">
             <div class="clean-breadcrumb">
-                <a href="#">Blog</a>
+                <a href="#">博客</a>
             </div>
 
             <div class="clean-searchbox">
@@ -79,77 +79,30 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 blog-main">
-                <div class="row">
+                <?php foreach ($contents as $k => $value) { ?>
+                    <?php if ($k%2 == 0) { echo "<div class='row'>"; }?>
+
                     <div class="col-md-6 col-sm-6">
                         <article class=" blog-teaser">
                             <header>
-                                <img src="{{ URL::asset('/') }}img/1.jpg" alt="">
-                                <h3><a href="content/1">How to Create Template</a></h3>
-                                <span class="meta">19 August 2015, John Doe</span>
+                                <img src="<?php echo  env('APP_URL').'/app/' . $value['image'];?>" alt="">
+                                <h3><a href="content/1"><?php echo $value['title'];?></a></h3>
+                                <span class="meta"><?php echo $value['created_at'];?></span>
                                 <hr>
                             </header>
                             <div class="body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sit. Doloribus dolores neque eos. Velit eveniet, necessitatibus aut sit tenetur perferendis! Commodi pariatur dignissimos, quis sequi odit iusto cumque quod!
+                                <?php echo $value['description'];?>
                             </div>
                             <div class="clearfix">
-                                <a href="content/1" class="btn btn-clean-one">Read more</a>
+                                <a href="content/<?php echo $value['id'];?>" class="btn btn-clean-one">Read more</a>
                             </div>
                         </article>
                     </div>
-                    <div class="col-md-6 col-sm-6">
-                        <article class="blog-teaser">
-                            <header>
-                                <img src="{{ URL::asset('/') }}img/2.jpg" alt="">
-                                <h3><a href="content/1">Clean Personal Blog Template</a></h3>
-                                <span class="meta">19 August 2015, John Doe</span>
-                                <hr>
-                            </header>
-                            <div class="body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sit. Doloribus dolores neque eos. Velit eveniet, necessitatibus aut sit tenetur perferendis! Commodi pariatur dignissimos, quis sequi odit iusto cumque quod!
-                            </div>
-                            <div class="clearfix">
-                                <a href="content/1" class="btn btn-clean-one">Read more</a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
+					<?php if ($k%2 != 0) { echo "</div>"; }?>
+                <?php } ?>
+                    <?php if ($k%2 == 0) {echo "</div>";}?>
 
-                <div class="copyrights">Collect from <a href="http://www.smallseashell.com/" >手机网站模板</a></div>
 
-                <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <article class="blog-teaser">
-                            <header>
-                                <img src="img/3.jpg" alt="">
-                                <h3><a href="content/1">Blackor - Responsive HTML5 Theme</a></h3>
-                                <span class="meta">19 August 2015, John Doe</span>
-                                <hr>
-                            </header>
-                            <div class="body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sit. Doloribus dolores neque eos. Velit eveniet, necessitatibus aut sit tenetur perferendis! Commodi pariatur dignissimos, quis sequi odit iusto cumque quod!
-                            </div>
-                            <div class="clearfix">
-                                <a href="content/1" class="btn btn-clean-one">Read more</a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-sm-6">
-                        <article class="blog-teaser">
-                            <header>
-                                <img src="img/4.jpg" alt="">
-                                <h3><a href="content/1">Yellow - HTML5 Template</a></h3>
-                                <span class="meta">19 August 2015, John Doe</span>
-                                <hr>
-                            </header>
-                            <div class="body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sit. Doloribus dolores neque eos. Velit eveniet, necessitatibus aut sit tenetur perferendis! Commodi pariatur dignissimos, quis sequi odit iusto cumque quod!
-                            </div>
-                            <div class="clearfix">
-                                <a href="content/1" class="btn btn-clean-one">Read more</a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
 
                 <div class="paging">
                     <a href="#" class="older">Older Post</i></a>
@@ -248,7 +201,7 @@
         </div>
     </div>
     <div class="widewrapper copyright">
-        Copyright 2015 More Templates <a href="http://www.smallseashell.com/" target="_blank" title="贝壳模板">贝壳模板</a> - Collect from <a href="http://www.smallseashell.com/" title="网页模板" target="_blank">网页模板</a>
+        Copyright 2015 <a href="# target="_blank" title=""></a> - Collect from <a href="#" title="" target="_blank"></a>
     </div>
 </footer>
 

@@ -17,6 +17,7 @@ class CreateContentsTable extends Migration
             $table->increments('id');
             $table->integer('author_id');
             $table->string('title');
+            $table->string('image',255)->comment('图片');
             $table->string('description');
             $table->longText('content');
             $table->integer('count');

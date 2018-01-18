@@ -19,9 +19,17 @@
     {{Session::get('flash-message-content')}}
 </div>
 @endif
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
-
-<form id="form-submit" action="/content" method="post">
+<form id="form-submit" action="/content" method="post" enctype="multipart/form-data">
     <input type="hidden" name="_token" value="{{csrf_token()}}">
     <div class="form-group">
         <label for="name">主题</label>
@@ -31,6 +39,10 @@
     <div class="form-group">
         <label for="name">描述</label>
         <input type="text" class="form-control" name="description" id="name" placeholder="请输入简要描述">
+    </div>
+    <div class="form-group">
+        <label for="name" >缩略图</label>
+        <input type="file" id="inputfile" name="image">
     </div>
     {{--<div class="form-group">--}}
         {{--<label for="inputfile">文件输入</label>--}}

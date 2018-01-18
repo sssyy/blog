@@ -11,16 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::namespace('Content')->prefix('content')->group(function () {
 
     Route::post('/','ContentController@store');
     Route::get('/','ContentController@index');
+	Route::get('/create','ContentController@create');
     Route::get('/{id}','ContentController@show');
-    Route::get('/create','ContentController@create');
+
 
 
 });
