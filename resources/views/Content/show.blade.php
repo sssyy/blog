@@ -95,18 +95,11 @@
                         </div>
                     </header>
                     <div class="body">
-                        <h1>Responsive HTML5 Template</h1>
+                        <h1><?php echo $content['title'];?></h1>
                         <div class="meta">
-                            <i class="fa fa-user"></i> John Doe <i class="fa fa-calendar"></i>23 Agustus 2015<i class="fa fa-comments"></i><span class="data"><a href="#comments">3 Comments</a></span>
+                            <i class="fa fa-user"></i> John Doe <i class="fa fa-calendar"></i><?php echo $content['created_at'];?><i class="fa fa-comments"></i><span class="data"><a href="#comments">3 Comments</a></span>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quas voluptatem et minima quo amet ducimus. Voluptatum soluta tenetur ducimus fugiat, sint voluptate eveniet adipisci nulla asperiores distinctio laudantium eos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident tenetur, consectetur dolores nostrum, numquam facere a dicta eum nam suscipit consequuntur dolorem aspernatur molestias vero quo id tempore vel possimus.</p>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quas voluptatem et minima quo amet ducimus. Voluptatum soluta tenetur ducimus fugiat, sint voluptate eveniet adipisci nulla asperiores distinctio laudantium eos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident tenetur, consectetur dolores nostrum, numquam facere a dicta eum nam suscipit consequuntur dolorem aspernatur molestias vero quo id tempore vel possimus.</p>
-
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quas voluptatem et minima quo amet ducimus. Voluptatum soluta tenetur ducimus fugiat, sint voluptate eveniet adipisci nulla asperiores distinctio laudantium eos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident tenetur, consectetur dolores nostrum, numquam facere a dicta eum nam suscipit consequuntur dolorem aspernatur molestias vero quo id tempore vel possimus.</p>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quas voluptatem et minima quo amet ducimus. Voluptatum soluta tenetur ducimus fugiat, sint voluptate eveniet adipisci nulla asperiores.</p>
+                        <?php echo $content['content'];?>
 
                     </div>
                 </article>

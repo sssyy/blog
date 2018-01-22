@@ -73,7 +73,7 @@
         <label for="name">发布时间</label>
         <br/>
         <label>
-        <input type="date" name="create_time" value=""/>
+        <input type="datetime-local" name="create_time" value=""/>
         </label>
     </div>
 

@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\View;
 
 class ContentController extends Controller
 {
+	public static $PAGE_LIMIT = 10;
+
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +21,7 @@ class ContentController extends Controller
     public function index()
     {
 
-        $pageLimit = 10;
+        $pageLimit = self::$PAGE_LIMIT;
         $contents = Content::where('publish_status','1')
 						->orderBy('id','desc')
 						->take($pageLimit)
@@ -58,10 +60,15 @@ class ContentController extends Controller
            'description' => 'required',
            'publish_status' => 'required',
            'content' => 'required',
-		   'image' => 'required | mimes:jpeg,bmp,png'
+//		   'image' => 'required | mimes:jpeg,bmp,png'
        ]);
        $date = date('Y-m-d');
-       $path = $request->file('image')->store('/uploadImg/' . $date);
+
+       if ($request->input('image'))
+       		$path = $request->file('image')->store('/uploadImg/' . $date);
+	   else
+	   		$path = '';
+
 
        $data = [
            'title' => $request->input('title'),
