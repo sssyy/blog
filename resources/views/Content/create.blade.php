@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>创建文章</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css" >
     <script type="text/javascript" src="/utf8-php/ueditor.config.js"></script>
@@ -14,21 +16,22 @@
 
 <body>
 
-@if (Session::has('flash-message-content'))
-<div class="alert alert-success">
-    {{Session::get('flash-message-content')}}
-</div>
-@endif
-@if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+{{--@if (Session::has('flash-message-content'))--}}
+{{--<div class="alert alert-success">--}}
+    {{--{{Session::get('flash-message-content')}}--}}
+{{--</div>--}}
+{{--@endif--}}
+{{--@if (count($errors) > 0)--}}
+    {{--<div class="alert alert-danger">--}}
+        {{--<ul>--}}
+            {{--@foreach ($errors->all() as $error)--}}
+                {{--<li>{{ $error }}</li>--}}
+            {{--@endforeach--}}
+        {{--</ul>--}}
+    {{--</div>--}}
+{{--@endif--}}
 
+<div class="container">
 <form id="form-submit" action="/content" method="post" enctype="multipart/form-data">
     <input type="hidden" name="_token" value="{{csrf_token()}}">
     <div class="form-group">
@@ -88,11 +91,10 @@
 </form>
 
 
-
+</div>
 
 </body>
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 <script>
     var editor = UE.getEditor('container');
 </script>

@@ -2654,7 +2654,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 						'thread throw true false try typedef typeid typename union ' +
 						'using uuid virtual void volatile whcar_t while';
 					
-		var functions =	'assert isalnum isalpha iscntrl isdigit isgraph islower isprint' +
+		var functions =	'assets isalnum isalpha iscntrl isdigit isgraph islower isprint' +
 						'ispunct isspace isupper isxdigit tolower toupper errno localeconv ' +
 						'setlocale acos asin atan atan2 ceil cos cosh exp fabs floor fmod ' +
 						'frexp ldexp log log10 modf pow sin sinh sqrt tan tanh jmp_buf ' +
@@ -2925,7 +2925,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 		// Contributed by Andres Almiray
 		// http://jroller.com/aalmiray/entry/nice_source_code_syntax_highlighter
 
-		var keywords =	'as assert break case catch class continue def default do else extends finally ' +
+		var keywords =	'as assets break case catch class continue def default do else extends finally ' +
 						'if in implements import instanceof interface new package property return switch ' +
 						'throw throws try while public protected private static';
 		var types    =  'void boolean byte char short int long float double';
@@ -2973,7 +2973,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 
 	function Brush()
 	{
-		var keywords =	'abstract assert boolean break byte case catch char class const ' +
+		var keywords =	'abstract assets boolean break byte case catch char class const ' +
 						'continue default do double else enum extends ' +
 						'false final finally float for goto if implements import ' +
 						'instanceof int interface long native new null ' +
@@ -3020,7 +3020,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 						+ 'Float Integer Long Number Short String Void'
 						;
 
-		var keywords = 'abstract after and as assert at before bind bound break catch class '
+		var keywords = 'abstract after and as assets at before bind bound break catch class '
 						+ 'continue def delete else exclusive extends false finally first for from '
 						+ 'function if import in indexof init insert instanceof into inverse last '
 						+ 'lazy mixin mod nativearray new not null on or override package postinit '
@@ -3319,7 +3319,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 	{
 		// Contributed by Gheorghe Milas and Ahmad Sherif
 	
-		var keywords =  'and assert break class continue def del elif else ' +
+		var keywords =  'and assets break class continue def del elif else ' +
 						'except exec finally for from global if import in is ' +
 						'lambda not or pass print raise return try yield while';
 

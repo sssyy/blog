@@ -11,7 +11,13 @@ use Illuminate\Support\Facades\View;
 
 class ContentController extends Controller
 {
-	public static $PAGE_LIMIT = 10;
+	protected static $PAGE_LIMIT = 10;
+
+    protected static $FEATURED_NUM = 6;
+
+    protected static $RELATED_NUM = 6;
+
+
 
     /**
      * Display a listing of the resource.
@@ -22,14 +28,21 @@ class ContentController extends Controller
     {
 
         $pageLimit = self::$PAGE_LIMIT;
+//        $content = Content::find(1);
+//        $use = $content->user->toArray();
         $contents = Content::where('publish_status','1')
 						->orderBy('id','desc')
-						->take($pageLimit)
-						->get()
-						->toArray();
+						->paginate($pageLimit);
 
+        $featuredContents = Content::where('publish_status','1')
+            ->orderBy('count','desc')
+            ->select('title,id')
+            ->take(self::$FEATURED_NUM);
+
+        //data mainContent ，featured.related,tag
+        //获取用户名
         if (is_array($contents)) {
-        	if (View::exists('Content.index'))
+        	if (View::exists('Content.index')){}
         	return \view('Content.index')->with('contents',$contents);
 		}
     }
@@ -60,16 +73,10 @@ class ContentController extends Controller
            'description' => 'required',
            'publish_status' => 'required',
            'content' => 'required',
-//		   'image' => 'required | mimes:jpeg,bmp,png'
+		   'image' => 'required | mimes:jpeg,bmp,png'
        ]);
        $date = date('Y-m-d');
-
-       if ($request->input('image'))
-       		$path = $request->file('image')->store('/uploadImg/' . $date);
-	   else
-	   		$path = '';
-
-
+       $path = $request->file('image')->store('/uploadImg/' . $date);
        $data = [
            'title' => $request->input('title'),
            'description' => $request->input('description'),
@@ -143,5 +150,11 @@ class ContentController extends Controller
     public function destroy(Content $content)
     {
         //
+    }
+
+    public function testUpload(Request $request)
+    {
+        var_dump($request->file('fileUpload'));
+        exit;
     }
 }

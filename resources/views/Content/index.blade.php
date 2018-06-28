@@ -5,23 +5,17 @@
     <title>Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ URL::asset('/') }}js/bootstrap.min.js"></script>
+    <script src="{{ URL::asset('/') }}js/modernizr.js"></script>
     <!-- Bootstrap styles -->
     <link rel="stylesheet" href="{{ URL::asset('/') }}css/bootstrap.min.css">
 
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="{{ URL::asset('/') }}css/font-awesome/css/font-awesome.min.css">
 
-    <!-- Google Webfonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Serif:400,400italic' rel='stylesheet' type='text/css'>
-
     <!-- Styles -->
     <link rel="stylesheet" href="{{ URL::asset('/') }}css/style.css" id="theme-styles">
-
-    <!--[if lt IE 9]>
-    <script src="{{ URL::asset('/') }}js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
-    <![endif]-->
-
 </head>
 <body>
 <header>
@@ -94,18 +88,16 @@
                                 <?php echo $value['description'];?>
                             </div>
                             <div class="clearfix">
-                                <a href="content/<?php echo $value['id'];?>" class="btn btn-clean-one">Read more</a>
+                                <a href="content/<?php echo $value['id'];?>" class="btn btn-clean-one">阅读全文</a>
                             </div>
                         </article>
                     </div>
 					<?php if ($k%2 != 0) { echo "</div>"; }?>
                 <?php } ?>
-                    <?php if ($k%2 == 0) {echo "</div>";}?>
 
 
 
                 <div class="paging">
-                    <a href="#" class="older">Older Post</i></a>
                 </div>
             </div>
             <aside class="col-md-4 blog-aside">
@@ -204,10 +196,5 @@
         Copyright 2015 <a href="# target="_blank" title=""></a> - Collect from <a href="#" title="" target="_blank"></a>
     </div>
 </footer>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="{{ URL::asset('/') }}js/bootstrap.min.js"></script>
-<script src="{{ URL::asset('/') }}js/modernizr.js"></script>
-
 </body>
 </html>
